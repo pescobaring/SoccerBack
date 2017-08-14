@@ -6,13 +6,13 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Domain;
 
 namespace API.Controllers
 {
-    [Authorize]
     public class LeaguesController : ApiController
     {
         private DataContext db = new DataContext();
@@ -25,9 +25,9 @@ namespace API.Controllers
 
         // GET: api/Leagues/5
         [ResponseType(typeof(League))]
-        public IHttpActionResult GetLeague(int id)
+        public async Task<IHttpActionResult> GetLeague(int id)
         {
-            League league = db.Leagues.Find(id);
+            League league = await db.Leagues.FindAsync(id);
             if (league == null)
             {
                 return NotFound();
@@ -38,7 +38,7 @@ namespace API.Controllers
 
         // PUT: api/Leagues/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutLeague(int id, League league)
+        public async Task<IHttpActionResult> PutLeague(int id, League league)
         {
             if (!ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace API.Controllers
 
             try
             {
-                db.SaveChanges();
+                await db.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -73,7 +73,7 @@ namespace API.Controllers
 
         // POST: api/Leagues
         [ResponseType(typeof(League))]
-        public IHttpActionResult PostLeague(League league)
+        public async Task<IHttpActionResult> PostLeague(League league)
         {
             if (!ModelState.IsValid)
             {
@@ -81,23 +81,23 @@ namespace API.Controllers
             }
 
             db.Leagues.Add(league);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = league.LeagueId }, league);
         }
 
         // DELETE: api/Leagues/5
         [ResponseType(typeof(League))]
-        public IHttpActionResult DeleteLeague(int id)
+        public async Task<IHttpActionResult> DeleteLeague(int id)
         {
-            League league = db.Leagues.Find(id);
+            League league = await db.Leagues.FindAsync(id);
             if (league == null)
             {
                 return NotFound();
             }
 
             db.Leagues.Remove(league);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
 
             return Ok(league);
         }

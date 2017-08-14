@@ -1,5 +1,5 @@
-﻿using Backend.Helpers;
-using Backend.Models;
+﻿using BackEnd.Helpers;
+using BackEnd.Models;
 using Domain;
 using System.Data.Entity;
 using System.Linq;
@@ -7,9 +7,11 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System;
-using Backend.Classes;
+using BackEnd.Classes;
+using BackEnd.Models;
+using BackEnd.Classes;
 
-namespace Backend.Controllers
+namespace BackEnd.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class UsersController : Controller

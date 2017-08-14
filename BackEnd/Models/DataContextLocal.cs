@@ -1,6 +1,6 @@
 ﻿using Domain;
 
-namespace Backend.Models
+namespace BackEnd.Models
 {
     public class DataContextLocal : DataContext
     {

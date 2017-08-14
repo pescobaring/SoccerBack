@@ -1,5 +1,5 @@
-﻿using Backend.Helpers;
-using Backend.Models;
+﻿using BackEnd.Helpers;
+using BackEnd.Models;
 using Domain;
 using System;
 using System.Data.Entity;
@@ -7,7 +7,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Backend.Controllers
+namespace BackEnd.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class LeaguesController : Controller

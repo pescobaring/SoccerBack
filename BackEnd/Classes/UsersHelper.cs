@@ -1,12 +1,12 @@
-﻿using Backend.Models;
-using IdentitySample.Models;
+﻿using BackEnd.Classes;
+using BackEnd.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 
-namespace Backend.Classes
+namespace BackEnd.Classes
 {
     public class UsersHelper : IDisposable
     {

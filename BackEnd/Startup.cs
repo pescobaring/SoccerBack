@@ -1,6 +1,8 @@
-﻿using Owin;
+﻿using Microsoft.Owin;
+using Owin;
 
-namespace IdentitySample
+[assembly: OwinStartupAttribute(typeof(BackEnd.Startup))]
+namespace BackEnd
 {
     public partial class Startup
     {

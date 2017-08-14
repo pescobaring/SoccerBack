@@ -1,8 +1,8 @@
-﻿using Backend.Models;
+﻿using BackEnd.Models;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace Backend.Controllers
+namespace BackEnd.Controllers
 {
     public class GenericController : Controller
     {

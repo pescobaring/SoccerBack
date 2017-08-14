@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web;
 
-namespace Backend.Models
+namespace BackEnd.Models
 {
     [NotMapped]
     public class TournamentView : Tournament

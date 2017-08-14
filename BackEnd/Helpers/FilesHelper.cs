@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Web;
 
-namespace Backend.Helpers
+namespace BackEnd.Helpers
 {
     public class FilesHelper
     {

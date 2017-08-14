@@ -1,11 +1,11 @@
-namespace Backend.Migrations
+namespace BackEnd.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Backend.Models.DataContextLocal>
+    internal sealed class Configuration : DbMigrationsConfiguration<BackEnd.Models.DataContextLocal>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Backend.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Backend.Models.DataContextLocal context)
+        protected override void Seed(BackEnd.Models.DataContextLocal context)
         {
             //  This method will be called after migrating to the latest version.
 
