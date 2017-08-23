@@ -1,6 +1,10 @@
 ﻿using API.Classes;
 using Domain;
+using Microsoft.AspNet.Identity;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -16,6 +20,7 @@ namespace API.Controllers
     [Authorize(Roles = "User")]
     public class UsersController : ApiController
     {
+        //
         private DataContext db = new DataContext();
 
         [HttpPost]
@@ -25,6 +30,7 @@ namespace API.Controllers
             var email = string.Empty;
             dynamic jsonObject = form;
 
+            
             try
             {
                 email = jsonObject.Email.Value;
@@ -44,7 +50,7 @@ namespace API.Controllers
             return Ok(userResponse);
         }
 
-
+       
         public IQueryable<User> GetUsers()
         {
             db.Configuration.ProxyCreationEnabled = false;
